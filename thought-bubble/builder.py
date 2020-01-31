@@ -1,5 +1,5 @@
-from syntax.syntaxtree import SyntaxTree
-from syntax.wordbank import WordBank
+from syntaxtree import SyntaxTree
+from wordbank import WordBank
 import random
 
 """
