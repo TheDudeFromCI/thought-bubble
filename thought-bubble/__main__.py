@@ -1,5 +1,6 @@
 from syntax.syntaxtree import SyntaxTree
 from syntax.wordbank import WordBank
+from config import wordbankloader as wordloader
 from syntax import builder
 
 if __name__ == '__main__':
@@ -46,15 +47,6 @@ if __name__ == '__main__':
     tree.add_rule('VP', ['VP', 'C', 'VP'])
 
     bank = WordBank()
-    bank.add_word('Apple', 'N')
-    bank.add_word('Tree', 'N')
-    bank.add_word('Jump', 'V')
-    bank.add_word('The', 'D')
-    bank.add_word('And', 'C')
-    bank.add_word('But', 'C')
-    bank.add_word('Green', 'Ad')
-    bank.add_word('Tired', 'Ad')
-    bank.add_word('of', 'P')
-    bank.add_word('Do', 'Au')
+    wordloader.load_words('words.csv', bank)
 
     print(builder.build_sentence(tree, bank, 'S'))
