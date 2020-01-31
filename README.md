@@ -1,0 +1,2 @@
+# Thought Bubble
+Thought Bubble is a dialog generation service which can be used to generate dynamic and meaningful narration from an artifical agent. The service aims to generate content which is agent-aware and context-aware, to encourage the output to be realistic without having to rely on formatting hundreds of template sentences. Though this approach, users can generate an endless supply of useful dialog to be used in environments where static dialog is unsavory.
