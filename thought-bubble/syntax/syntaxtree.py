@@ -18,7 +18,7 @@ class SyntaxTree:
         if constituent not in self.constituents:
             self.constituents.append(constituent)
 
-    def add_rule(rule, constituent: str, subconstituents: list(str)):
+    def add_rule(self, constituent: str, subconstituents: list):
         """
         Adds a new rule to this syntax tree. The given constituent and subconstituents
         are added to the tree if they are not already present.
@@ -33,4 +33,14 @@ class SyntaxTree:
         for sub in subconstituents:
             self.add_constituent(sub)
 
-        self.rules.append(constituent, subconstituents)
+        self.rules.append({'constituent': constituent,
+                           'subconstituents': subconstituents})
+
+    def get_rules(self, constituent: str) -> list:
+        rules = []
+
+        for rule in self.rules:
+            if rule['constituent'] == constituent:
+                rules.append(rule['subconstituents'])
+
+        return rules
